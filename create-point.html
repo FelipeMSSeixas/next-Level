@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./CSS/style.css" >
+    <link rel="stylesheet" href="./CSS/page-create-point.css">
+    <link rel="stylesheet" href="./CSS/responsive.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <title>Cadastro</title>
+</head>
+<body>
+    <div id="page-create-point">
+        <header>
+            <img src="./icones/logo.svg" alt="">
+            <a href="#">
+                <span>
+
+                </span>
+                Voltar para home
+            </a>
+        </header>
+        <form action=""> <!--é forma da caixa de cadastro-->
+            <h1>
+                Cadastro do ponto de coleta
+            </h1>
+            
+            
+            <fieldset> <!--è como se fosse uma div, entretanto ela mais semantica neste contexto, pois ela agrupara "dados da entidade" e "itens de coleta", formando uma coleção de campos-->
+                <legend> <!--legenda, o titulo e tals ..-->
+                    <h2>
+                        Dados da entidade
+                    </h2>
+                </legend>
+
+                <div class="field"> <!--"field" quer dizer campo-->
+
+                    <label for="name"> Nome da entidade </label> <!--label= Rótulo-->
+                    <input type="text" name="name"> 
+
+                </div>
+
+                <div class="field-group">
+                    <div class="field">
+                        <label for="address"> Endereço</label>
+                        <input type="text" name="address"> <!--address= endereço-->
+                    </div>
+
+                    <div class="field">
+                        <label for="address2"> Número/Complemento</label>
+                        <input type="text" name="address2">
+
+                    </div>
+
+                </div>
+
+                <div class="field-group">
+
+                    <div class="field">
+                        <label for="uf"> Estado</label>
+                        <select name="uf" id=""> <!--"SELECT" cria um botão de seleção-->
+                            <option value=""> 
+                                Selecione o Estado <!--"option" permite colocar um text " Selecione o Estado", pra quando a caixa select estiver fechada -->
+                            </option>
+                        </select>
+                        
+                    </div>
+
+                    <div class="field">
+                        <label for="city"> Cidade</label> <!--city= cidade-->
+                        <select name="city" id="" disabled> <!--"disabled" desabilitado, sera abilitado com JS, para apessoa só conseguir usar o campo cidade depois de selecionar o Estado.-->
+                            <option value="">
+                                Selecione a Cidade
+                            </option>
+                        </select>
+                    </div>    
+
+                </div>
+
+
+            </fieldset>
+
+
+
+            <fieldset>
+                <legend>
+                    <h2>
+                        Ítens de coleta
+                    </h2>
+                </legend>
+
+                <div class="items-grid"> <!--grides = grades-->
+                    <li data-id="1"><img src="./icones/lampadas.svg" alt="Lâmpadas">
+                        <span>
+                            Lâmpadas
+                        </span>
+                    </li>
+                    
+                    <li data-id="2"><img src="./icones/baterias.svg" alt=" Pilhas e Baterias">
+                        <span>
+                            Pilhas e Baterias
+                        </span>
+                    </li>
+
+                    <li data-id="3"><img src="./icones/papeis-papelao.svg" alt="Papéis e Papelão">
+                        <span>
+                            Papéis e Papelão
+                        </span>
+                    </li>
+
+                    <li data-id="4"><img src="./icones/eletronicos.svg" alt="Resíduos Eletrônicos">
+                        <span>
+                            Resíduos Eletrônicos
+                        </span>
+                    </li>
+
+                    <li data-id="5"><img src="./icones/organicos.svg" alt="Resíduos Orgânicos">
+                        <span>
+                            Resíduos Orgânicos
+                        </span>
+                    </li>
+
+                    <li data-id="6"><img src="./icones/oleo.svg" alt="Óleo de Cozinha">
+                        <span>
+                            Óleo de Cozinha
+                        </span>
+                    </li>
+                </div>
+                <input type="hidden" name="item"> <!--hidden = escondido-->
+            </fieldset> 
+
+            <button type="submit"> Cadastrar ponto de coleta
+                 <!--no case esse butao do tipo "submit", fara com que quando for clicado ele vai querer enviar os dados da "form", ou seja da caixa de cadastro.-->
+                
+            </button>
+        </form>
+    </div>
+
+    <script src="./JS/create-point.js"></script>
+</body>
+</html>

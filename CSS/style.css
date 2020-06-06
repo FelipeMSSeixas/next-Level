@@ -1,0 +1,34 @@
+:root{                      /* o seletor "root" esta referenciando a raiz do documento html*/
+    --title-color:#322153;  /*tudo que tiver dentro do "root", pode ser replicada como variaveis*/
+    --primary-color:#34cb79;
+}     
+* {                     /* o seletor "*" indica que é para qualquer elemento do meu html*/
+    margin: 0;          /*retirei margin e padding pré existente pelo navegador*/
+    padding: 0;
+    box-sizing: border-box; /*Quando colocamos o preenchimento "padding", ele tende a daixar a caixa com alguma outra coisa (aqui foi a largura "max-width"), ele tende almentar o tamho da caixa, por isso mudamos para "box-sizing: border-box", fazendo com que o limite seja exatamente a largura colocada, pois o limite da caixa é sua borda "border-box"*/
+
+}                   
+
+body{                        /*BOX MODE*/
+    width: 100%;         /*Toda caixa tem*/
+    height: 100%;        /*largura, altura,espaçamentos, prrenchimentos, bordas, cor*/
+    margin: 0;           /* fundo, maneira que é vista no html (display)*/
+    background-color:#f0f0f5;           /*posicionamento, alinhamento*/ 
+    -webkit-font-smoothing: antialiased;   /*"-webkit-font-smoothing: antialiased;", deixa as fontes de textos mais suaves ao ver*/
+}   
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none; /*sem decorção de texto (tirei a linha que acompanha um texto ancorada*/
+    /*aqui qualquer text ancorado ficara sem a linha de sublinhação*/
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Ubuntu', sans-serif; /*ubuntu é fonte de letras do google.com, aqui todas os "h" do meu site receberão este estilo*/
+    color: var(--title-color); /* aqui é a variavel cor*/
+    
+
+}

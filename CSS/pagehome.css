@@ -1,0 +1,97 @@
+#page-home{  /* imagem dos recicladore*/
+    height: 110vh; /* "vh" quer dizer vilport height é o canto da tela que fica em branco, aqui no caso ele vai ocupar 100 bloquinhos(se imaginasse sem tijolinhos), e "vh" é dinamico tmbm ou melhor dizendo responsivo.*/
+    background-image: url('../icones/home-background.svg') no-repeat;
+    background-position: 35vw bottom;/* a qui no caso vai ser na largura(ler o "vh" acima).*/
+
+}
+#page-home .content{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto; /* margin: 0 auto é o mesmo que "margin-left: auto junto com margin-right:   auto", ou seja havera um preenchimento das laterais automaticamente deixando sempre o elemento centralizado, margin: 0 auto, quer dizer "não preencha em cima e nem embaixo com margem (por isso o 0), mas preencha as laterais". ainda podemos ter três elementos no margin, como por exemplo: margin: 50% auto 0; isso quer dizer em cima 50%, as laterais preenchimento autamatico ou seja ambos os lados com mesma medida e em baixo 0.
+        e o margin: auto, que quer dizer os quatro cantos preenchimento automatico*/
+     display: flex; /*deixa os conteúdo além de responsivos em linha*/
+     flex-direction: column; /*permanece o display flex e responsivo, mas agora eles estão em coluna ou seja um embaixo do outro*/
+     height: 100%; /* faço com que essa caixa o cupe toda altura*/
+
+}
+header{
+    display: flex;
+    align-items: center; /*este comando quer dizer alinhe os itens no (center)*/
+    justify-content: space-between;  /*justify-content: justificar o conteúdo de dentro/ space-between é o comando de espaço entre eles*/
+    margin-top: 48px;
+
+}
+header a{                 /*O display flex permite que o "span" fique em linha com o "a".*/
+    display: flex;        /* Aqui estamos trabalhando a estilização da frase ancorada em 'a"*/
+    color: var(--title-color);     /*cor da frase (title-color é um variavel) */
+    font-weight: 700;     /*aqui estamos mechendo como o peso da fonte (negrito)*/
+    
+}
+header a span{
+    background-image: url(../icones/log-in.svg); /*adicionamos uma logo qual esta em linha com o "a"*/
+    width: 20px; /*colocamos uma largura e altura, pois se nao a img não aparece*/
+    height: 20px;
+    margin-right: 15px; /*margin aqui é pra dar uma distancia entre o "span" e "a"*/
+
+}
+#page-home main{
+    max-width: 560px;    /*tudo da tela ocupara o esse maximo de tamanho na tela*/
+    display: flex;       /*deixa os conteúdo além de responsivos em linha*/
+    flex-direction: column;  /*permanece o display flex e responsivo, mas agora eles estão em coluna ou seja um embaixo do outro*/
+    justify-content: center; /* No "header" foi usado"justify-content: space-between", para dar espaço entre os objetos, aqui vai ser usado "justify-content: center", para colocar os elementos da caixa "main", no centro dela. e como seu display esta em coluna, logo sera calculado seu maeio referente a altura*/
+    flex: 1;  /*é para realizar o calculo do meio altomaticamente, sem precisar ficar chutando a quantidade de pixel necessarias, e assim deixando a pagina mais flexivel ou melhor responssiva.*/
+    
+}
+#page-home main h1{
+    font-size: 54px; /*tamanho da letra*/
+}
+#page-home main p{
+    font-size: 24px; /* é ota manho das letras do texto*/
+    line-height: 38px; /* espaçamento entres as linhas do texto*/
+    margin-top: 24px;
+}
+#page-home main a{
+    background-color: var(--primary-color);
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    max-height: 72px;
+    border-radius: 8px; /* "border-radius" é um short-range ou seja um atalho paara todas laterais de bordas e serve para o arredondamento das bordas, caso eu coloque dois valores tipo "border-radius: 8px 15px", ele arrendodarar intercalando entre 8px e 25px no sentido horario, começando com o 8px.*/
+    display: flex;
+    align-items: center; /*aqui eu alinhei todos itens(elementos) que estão dendro da caixa "a" ao seu centro*/
+    margin-top: 40px;
+    transition: 300ms; /* tera uma um tempo de mudança no efeito hover, suavisando a transação para o efeito*/
+    
+}
+
+#page-home main a:hover{ /*o "hover" faz uma estilização especial e ele identifaca quando mouse esta em cima do item.*/
+    background-color: #2fb86e;  /*quando o mouse estiver sobre o item, o item mudara de cor*/
+}
+
+
+#page-home main a span{
+    width: 72px;
+    height: 72px;
+    background-color:rgba(0,0,0,0.07);/* este "rgba()" contem transparencia, aqui a casa 0.08indica a transparencia desejada*/
+    border-top-left-radius: 8px; /*arrendondei a borda superior esquerda em 8px*/
+    border-bottom-left-radius: 8px; /*arrendondei a borda inferior esquerda em 8px*/
+    
+    display: flex;
+    align-items: center; /*este comando quer dizer: alinhe os itens no centro (center), referente a altura*/
+    justify-content: center;/*este comando quer dizer: alinhe os itens no centro (center), referente a largura*/
+
+}
+
+#page-home main a span::after{ /* "::after" é um pseudo elemento, ouseja vamos criar um elemento que não existe em html*/
+    content: ""; /*agora dentro do span existe content(conteudo), como se fosse uma classe*/
+    background-image: url(../icones/search.svg); /* aimagem só aparece quando der largura e altura a ela, a caixa que ela esta contida (que no caso aqui é "#page-home main a span",  comando anterior, tiver com o display flex, lembrando que é para imagens em ".svg"*/
+    width: 20px;
+    height: 20px;
+
+}
+
+#page-home main a strong{
+    color: white;
+    flex: 1; /* preenchimento automatico dos espaços vazios o que permite o comando "text-align" centralizar o texto*/
+    text-align: center; /*centraliza o texto*/
+}

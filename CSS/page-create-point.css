@@ -1,0 +1,189 @@
+
+/*****************************Cabeçalho da Pagina*************************************/
+
+#page-create-point{
+    width: 90%;
+    max-width:1100px ;
+    margin: 0 auto;
+
+}
+
+
+#page-create-point header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 48px;
+}
+#page-create-point header a{
+    color: var(--title-color);
+    font-weight: 700;  /*"font-weight:" é o peso da fonte, 700 equivale ao bolt(negrito)*/
+
+    display: flex;
+    align-items: center;
+}
+#page-create-point header a span{ /*sem display: flex posto na caixa anterior, */
+                                  /*sem height: e width: a imagem em span, não aparecerá*/
+    margin-right: 15px;
+    background-image: url(../icones/arrow-left.svg);
+
+    display: flex;
+
+    height: 20px;
+    width: 20px;
+    
+}
+/* ****************************Caixa de cadastro**************************************** */
+
+#page-create-point form{ /*caixa de cadastro*/
+    margin: 80px auto;
+    background-color: white;
+
+    padding: 64px;   /* A "padding" é responssável pelo preenchimento interno da caixa*/
+    border-radius: 8px; /*arredondara as bordas da caixa*/
+
+    max-width: 730px;
+}
+
+form h1{
+    display: flex;
+    flex: 1;
+    font-size: 36px;
+    text-align: center;
+    
+}
+
+/*******************Dados da entidade da caixa de cadastro***********************************/
+
+form fieldset{
+    margin-top: 64px; 
+    border: 0;
+}
+
+form legend{
+    margin-bottom: 40px;
+}
+form legend h2{
+    font-size: 24px;
+    
+}
+
+form .field{
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 24px; /*esse comando cria uma margem na parte inferio "bottom" dos elementos que estao dentro da caixa "field"*/
+
+    flex: 1; /*realiza o preenchimento automatico dos espaços vazios do display flex(do qual fica em linha)*/
+}
+
+
+form .field-group{
+    display: flex;
+}
+
+form input,
+form select{
+    background-color: #f0f0f5;
+    border: 0;  /*retirar as bordas padrões que vem nos input*/
+    padding: 16px 24px; /* espaçamento interno (topo) e (laterais)*/
+    font-size: 16px; /*aumenta o tamanho da letra do text dentro do input*/
+
+    border-radius: 8px; /*arredondamento das bordas*/
+
+    outline: none;  /*tirei a linha preta que aparece quando eu seleciono para escrever algo no input*/
+
+    transition: 100ms;
+}
+
+form input:hover, 
+form select:hover{ /*efeito visual */
+    background-color: #e5e5eb;
+}
+
+form select{ /* aqui tiramos as formataçoes basicas pré-existentes no butao de "select", pois ele não pega as formatções feitas anteriorente, assim evitando incopatibilidade com os navegadores*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label{
+    font-size: 14px;
+    margin-bottom: 8px;
+
+}
+form .field-group .field + .field{ /*essa sintax quer dizer pegar dentro do field-group o .field que esta depois de outro .field*/
+    margin-left: 24px;
+}
+
+
+/********************Itens de coleta da caixa de cadastro**********************************/
+
+div.items-grid{  /*grids = grades*/
+    display: grid;             /*para poder fazer colunas*/
+    grid-template-columns: 1fr 1fr 1fr; /*fez tres colunas ocupando uma fração "1fr" de todo espaço*/
+    gap: 16px;   /*"gap" é uma propriedade do "grid" onde ele faz uma separaão automatica entre as linhas e colunas, mas favoravel que usar "margen" neste caso*/
+
+}
+div.items-grid li{
+    background-color: #f0f0f5; 
+    list-style: none; /* tira as bolinhas ou stylo da lista*/
+
+    border: 2px solid #f0f0f5 ; /* uma linha  solida em torno da caixa */
+    border-radius: 8px;           /*arredonda a borda*/
+
+    height: 180px;                
+
+    padding: 32px 24px 16px;   /*prenchimento interno*/
+
+    display: flex;             /*deixa em linha*/
+    flex-direction: column;    /*retorno pra coluna*/
+    align-items: center;
+    justify-content: space-between; /*coloca espaço entre os elemntos, como o flex esta em modo coluna sera colocado um espaço de cima para baixo no sentido de coluna, no flex normal é colocado da esquerda para direita no fluxo normal do flex*/
+
+    text-align: center; /*alinhar os textos no centro*/
+
+    cursor: pointer;   /* faz com que o mouse mude da setinha para mãozinha quando o mouse e passado por cima dos itens desta caixa "li"*/
+    
+}
+
+div.items-grid li span{ /*são as frases que acompanha as imagens*/
+    flex: 1;   /*prenche os espaços automaticamente*/
+    
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+    margin-top: 12px;
+}
+
+div.items-grid li.selected{ /*para que quando for clicado em algum iten "imagens" desta caixa for ela tome essas configurações*/
+    background-color: #e1face;
+    border: 2px solid #34cb79;
+}
+
+div.items-grid li img,
+div.items-grid li span {
+    pointer-events: none; /*aqui etou dizendo sem eventos de ponteiro, como se tivesse unindo os dois, para quando clicar indicar apenas a sua posição no li(necessario para troca de classe=selected, pelas li, qual esta sendo realizo pela js*/
+}
+
+
+
+/***********************Botão de cadastro da caixa de cadastro************************************/
+
+form button{
+    margin-top: 40px;
+    width: 260px;
+    height:56px ;
+
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0;
+    transition: 200ms;/* faz com que a transitio do efeito "hover" aseguir fique mais suave*/
+}
+form button:hover{ /*quando passar o mouse em cima*/
+    background-color: #2fb86e;
+}
