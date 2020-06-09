@@ -50,7 +50,7 @@ for(const item of itemToCollect){
 }
 
 
-document.querySelector("input[name= item]")
+const collecteditems = document.querySelector("input[name= item]")
 
 let selectedItems = []    /*varial de coleçao de dados "um array"*/
 
@@ -87,4 +87,5 @@ function handleSelectedItem(event){
 
     //atualizar o input escondido com os itens selecionados pt-5//
     //document.querySelector("input[name= item]" pt-5) ele sobe pq toda hora vai ficar aceesando html, então na é legal e ficar por ultimo. ele subiu para a linha 53//
+    collecteditems.value = selectedItems
 }

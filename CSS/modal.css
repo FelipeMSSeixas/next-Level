@@ -1,0 +1,85 @@
+#modal{
+    background-color: #0e0a14ef; /*o "ef" do fim da cor é o que da a transparência*/
+
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed; /*as duas linhas colocam a "modal" sobre a pagina principal*/
+    top: 0;
+
+    display: flex;              /* este conjunto de comando centraliza o conteúdo da caixa...*/
+    justify-content: center;    /* ... id = modal*/
+    align-items: center;
+
+    transition: 300ms;      /*suavisa quando for aparecer*/
+}
+
+#modal.hide{
+    display: none; /*vai ocultar toda "div id="modal""*/
+}
+
+#modal div.content{
+    color: white;
+    width: 420px;
+}
+
+#modal div.header{
+    display: flex;
+    align-items: center;             /* este conjunto de comando centraliza o conteúdo da caixa...*/
+    justify-content: space-between;
+    margin-bottom: 48px;
+
+}
+
+#modal div.header a{
+    background-image: url(../icones/x.svg);
+
+    width: 20px;       /*esse conjunto de de comandos ,faz com que ...*/
+    height: 20px;      /* ... a imagem "x" apareça*/
+    display: flex;
+
+    font-size: 0.01px; /* estrategia para sumir com a palavra fechar*/
+}
+
+#modal div.header h1{
+    color: white;
+    font-size: 36px;
+    line-height: 42px;  
+}
+#modal form label{
+    font-size: 14px;
+    line-height: 16px;
+
+    display: block;      /*como o display esta em linha não pega a margin-bottom...*/
+    margin-bottom: 8px;  /*... por isso a estrategia de display: block*/
+}
+
+#modal form div.field{
+    display: flex;
+}
+#modal form input{
+    flex: 1;
+    background-color: #f0f0f5;
+    
+    border-radius: 8px 0 0 8px;
+    border: 0;
+
+    padding: 16px 24px;
+    color: #6c6c80;
+
+    font-size: 16px;
+}
+
+#modal form button{
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--primary-color);
+
+    border-radius: 0 8px 8px 0;
+    border: 0;
+}
+
+#modal form button:hover{
+    background-color: #2fb86e;
+}
