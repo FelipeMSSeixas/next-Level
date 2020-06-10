@@ -1,0 +1,101 @@
+/************************Cabeçalho Search-result***********************************************/
+#serach-result{
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#serach-result header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 48px;
+}
+
+#serach-result header a{
+    font-weight: 700;
+    color: var(--title-color);
+
+    display: flex;
+    align-items: center;
+}
+
+#serach-result header a span{
+    background-image: url(../icones/arrow-left.svg);
+
+    width: 20px;
+    height: 20px;
+    display: flex;
+
+    margin-right: 15px;
+}
+
+/*******************************CARDS DA SEARCH-RESULT*******************************************/
+main{
+    margin-top: 48px;
+    
+}
+
+main h4{
+    font-weight: normal;
+    font-family: Roboto, sans-serif;
+    margin-bottom: 32px;
+}
+
+main div.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*número de colunas*/
+    gap: 24px;
+
+}
+
+main div.card img{
+    width: 100%;
+    height: 150px;
+    
+    border-radius: 8px 8px 0 0;
+}
+
+main div.card h1{
+    margin-top: 34px;
+
+    font-size: 36px;
+    line-height: 41px;
+
+    color: #322153;
+}
+
+main div.card h3{
+    margin: 24px 0;
+
+    font-family: Roboto, sans-serif;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+
+    color: var(--primary-color);
+}
+
+main div.card p{
+    font-family: Roboto, sans-serif;
+
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #6c6c80;
+}
+
+body::after{ /* este pseudo elemento cria um background de cor diferente (branco) em meia tela (ou na altura desejavel)*/
+    content: " "; /*conteúdo vazio*/
+    position: fixed; /*fixei a posição*/
+
+    background-color: white; /*cor desejada da bakground*/
+
+    top: 260px;      /* em que destancia ficará da borda top */
+    left: 0;         /* em que destancia ficará da borda left*/
+    right: 0;        /* em que destancia ficará da borda right*/
+    bottom: 0;       /*em que destancia ficará da borda bottom*/
+
+    z-index: -1;   /*faz com ele fique como plano de fundo, sem ele, o background sobrepoem os conteúdos da página*/
+}
